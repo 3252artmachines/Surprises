@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Isha ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.container{
+margin-top:70px;
+padding:20px;
+}
+
+h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+h2{
+font-size:28px;
+}
+
+img{
+width:300px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 15px 30px rgba(0,0,0,0.4);
+}
+
+#message{
+font-size:22px;
+width:70%;
+margin:auto;
+margin-top:20px;
+line-height:1.6;
+min-height:120px;
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4b6e;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff4b6e;
+color:white;
+}
+
+.heart{
+position:fixed;
+color:red;
+font-size:25px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday Isha ❤️</h1>
+<h2>From Madhan</h2>
+
+<img src="isha.jpg">
+
+<div id="message"></div>
+
+<button onclick="surprise()">Open My Heart 💝</button>
+
+<h2 id="surpriseMsg"></h2>
+
+</div>
+
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+let text = `My dear Isha,
+
+On this special day I just want to remind you
+how important you are in my life.
+
+You are my happiness,
+my peace,
+and the most beautiful part of my world.
+
+Every moment with you is magical.
+
+Happy Birthday my love ❤️`;
+
+let i = 0;
+
+function typeWriter(){
+if(i < text.length){
+document.getElementById("message").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+}
+
+typeWriter();
+
+function surprise(){
+document.getElementById("surpriseMsg").innerHTML =
+"I Love You Forever Isha ❤️ — Madhan";
+}
+
+function hearts(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*25)+"px";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(hearts,250);
+
+</script>
+
+<audio id="bgmusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.body.addEventListener("click", function() {
+    document.getElementById("bgmusic").play();
+}, { once: true });
+</script>
+
+</body>
+</html>
